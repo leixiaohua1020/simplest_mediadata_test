@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simplest_mediadata_test", "simplest_mediadata_test\simplest_mediadata_test.vcxproj", "{DCEEED89-0740-484A-817F-927B73613B13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCEEED89-0740-484A-817F-927B73613B13}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DCEEED89-0740-484A-817F-927B73613B13}.Debug|Win32.Build.0 = Debug|Win32
+		{DCEEED89-0740-484A-817F-927B73613B13}.Release|Win32.ActiveCfg = Release|Win32
+		{DCEEED89-0740-484A-817F-927B73613B13}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
