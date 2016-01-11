@@ -781,7 +781,7 @@ int simplest_pcm16le_to_pcm8(char *url){
 int main(int argc, char* argv[]){
 
 	//Test
-	/*
+	
 	simplest_yuv420_split("lena_256x256_yuv420p.yuv",256,256,1);
 
 	simplest_yuv444_split("lena_256x256_yuv444p.yuv",256,256,1);
@@ -819,7 +819,7 @@ int main(int argc, char* argv[]){
 	simplest_flv_parser("cuc_ieschool.flv");
 
 	simplest_aac_parser("nocturne.aac");
-	*/
+	
 	simplest_udp_parser(8880);
 
 	return 0;
