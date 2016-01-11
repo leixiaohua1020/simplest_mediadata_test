@@ -60,8 +60,7 @@ typedef struct MPEGTS_FIXED_HEADER {
 	unsigned transport_error_indicator: 1; 
 	unsigned payload_unit_start_indicator: 1;
 	unsigned transport_priority: 1; 
-	unsigned PID_high: 5;
-	unsigned PID_low: 8;
+	unsigned PID: 13;
 	unsigned scrambling_control: 2;
 	unsigned adaptation_field_exist: 2;
 	unsigned continuity_counter: 4;
