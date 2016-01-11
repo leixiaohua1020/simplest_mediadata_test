@@ -34,8 +34,8 @@
 
 /*
  * [memo] FFmpeg stream Command:
- * ffmpeg -i test.ts -f mpegts udp://127.0.0.1:8880
- * ffmpeg -i test.ts -f mpegts rtp://127.0.0.1:8880
+ * ffmpeg -re -i sintel.ts -f mpegts udp://127.0.0.1:8880
+ * ffmpeg -re -i sintel.ts -f rtp_mpegts udp://127.0.0.1:8880
  */
 
 typedef struct RTP_FIXED_HEADER{
@@ -60,7 +60,8 @@ typedef struct MPEGTS_FIXED_HEADER {
 	unsigned transport_error_indicator: 1; 
 	unsigned payload_unit_start_indicator: 1;
 	unsigned transport_priority: 1; 
-	unsigned PID: 13;                  //Packet ID
+	unsigned PID_high: 5;
+	unsigned PID_low: 8;
 	unsigned scrambling_control: 2;
 	unsigned adaptation_field_exist: 2;
 	unsigned continuity_counter: 4;
@@ -74,7 +75,7 @@ int simplest_udp_parser(int port)
 	WORD sockVersion = MAKEWORD(2,2);
 	int cnt=0;
 	FILE *myout=stdout;
-
+	//FILE *myout=fopen("output_log.txt","wb+");
 
 	FILE *fp1=fopen("output_dump.ts","wb+");
 
@@ -156,7 +157,7 @@ int simplest_udp_parser(int port)
 				unsigned int timestamp=ntohl(rtp_header.timestamp);
 				unsigned int seq_no=ntohs(rtp_header.seq_no);
 
-				fprintf(myout,"[RTP Pkt] %5d| %5s| %10d| %5d| %5d|\n",cnt,payload_str,timestamp,seq_no,pktsize);
+				fprintf(myout,"[RTP Pkt] %5d| %5s| %10u| %5d| %5d|\n",cnt,payload_str,timestamp,seq_no,pktsize);
 
 				//RTP Data
 				char *rtp_data=recvData+rtp_header_size;
@@ -170,8 +171,8 @@ int simplest_udp_parser(int port)
 						if(rtp_data[i]!=0x47)
 							break;
 						//MPEGTS Header
-						memcpy((void *)&mpegts_header,rtp_data,sizeof(MPEGTS_FIXED_HEADER));
-						fprintf(myout,"   [MPEGTS Pkt] PID=%d\n",mpegts_header.PID);
+						//memcpy((void *)&mpegts_header,rtp_data+i,sizeof(MPEGTS_FIXED_HEADER));
+						fprintf(myout,"   [MPEGTS Pkt]\n");
 					}
 				}
 

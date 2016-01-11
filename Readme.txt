@@ -7,7 +7,7 @@ leixiaohua1020@126.com
 Communication University of China / Digital TV Technology
 http://blog.csdn.net/leixiaohua1020
 
-本项目包含如下几种视音频测试示例：
+本项目包含如下几种视音频数据解析示例：
  (1)像素数据处理程序。包含RGB和YUV像素格式处理的函数。
  (2)音频采样数据处理程序。包含PCM音频采样格式处理的函数。
  (3)H.264码流分析程序。可以分离并解析NALU。
