@@ -76,6 +76,8 @@ int simplest_flv_parser(char *url){
 	int output_v=1;
 	//-------------
 	FILE *ifh=NULL,*vfh=NULL, *afh = NULL;
+
+	//FILE *myout=fopen("output_log.txt","wb+");
 	FILE *myout=stdout;
 
 	FLV_HEADER flv;

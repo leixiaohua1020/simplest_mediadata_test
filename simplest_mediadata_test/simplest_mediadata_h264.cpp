@@ -164,6 +164,8 @@ int simplest_h264_parser(char *url){
 
 	NALU_t *n;
 	int buffersize=100000;
+
+	//FILE *myout=fopen("output_log.txt","wb+");
 	FILE *myout=stdout;
 
 	h264bitstream=fopen(url, "rb+");
@@ -226,6 +228,7 @@ int simplest_h264_parser(char *url){
 
 		nal_num++;
 	}
+
 	//Free
 	if (n){
 		if (n->buf){

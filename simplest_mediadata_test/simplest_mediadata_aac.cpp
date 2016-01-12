@@ -68,6 +68,8 @@ int simplest_aac_parser(char *url)
 	int size = 0;
 	int cnt=0;
 	int offset=0;
+
+	//FILE *myout=fopen("output_log.txt","wb+");
 	FILE *myout=stdout;
 
 	unsigned char *aacframe=(unsigned char *)malloc(1024*5);

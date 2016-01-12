@@ -77,6 +77,7 @@
     <ClCompile Include="simplest_mediadata_aac.cpp" />
     <ClCompile Include="simplest_mediadata_flv.cpp" />
     <ClCompile Include="simplest_mediadata_h264.cpp" />
+    <ClCompile Include="simplest_mediadata_main.cpp" />
     <ClCompile Include="simplest_mediadata_raw.cpp" />
     <ClCompile Include="simplest_mediadata_udp.cpp" />
   </ItemGroup>

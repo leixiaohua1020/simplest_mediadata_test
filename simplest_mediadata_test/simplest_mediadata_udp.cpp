@@ -73,8 +73,9 @@ int simplest_udp_parser(int port)
 	WSADATA wsaData;
 	WORD sockVersion = MAKEWORD(2,2);
 	int cnt=0;
-	FILE *myout=stdout;
+
 	//FILE *myout=fopen("output_log.txt","wb+");
+	FILE *myout=stdout;
 
 	FILE *fp1=fopen("output_dump.ts","wb+");
 
